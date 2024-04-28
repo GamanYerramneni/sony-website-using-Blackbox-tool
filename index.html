@@ -1,138 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sony Products</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-    }
-
-    header {
-      background-color: #333;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-    }
-
-    header a {
-      color: #fff;
-      text-decoration: none;
-      margin-right: 1rem;
-    }
-
-    header button {
-      background-color: #fff;
-      color: #333;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    .product {
-      width: calc(33.333% - 2rem);
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .product img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 5px;
-      margin-bottom: 1rem;
-    }
-
-    .product h3 {
-      margin-bottom: 0.5rem;
-    }
-
-    .product p {
-      margin-bottom: 1rem;
-    }
-
-    .search-bar {
-      width: 50%;
-      margin-bottom: 2rem;
-    }
-
-    .search-bar input[type="text"] {
-      width: 100%;
-      padding: 0.5rem;
-      border: none;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .search-bar button {
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-left: 1rem;
-    }
-
-    .dropdown {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      display: none;
-    }
-
-    .dropdown.active {
-      display: block;
-    }
-
-    .dropdown a {
-      display: block;
-      padding: 0.5rem 1rem;
-      border-bottom: 1px solid #ddd;
-      text-align: center;
-    }
-
-    .dropdown a:last-child {
-      border-bottom: none;
-    }
-
-    .dropdown a:hover {
-      background-color: #ddd;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      header a {
-        margin-bottom: 1rem;
-      }
-
-      .container {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sony | Latest Products</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to bottom, #ff69b4, #ffc0cb);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 100vh;
+            margin: 0;
+        }
+       .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        /* Header Styles */
+       .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+       .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+       .nav-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+       .nav-button:hover {
+            background-color: #444;
+        }
+        /* Slider Styles */
+       .slider {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+       .slider-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+       .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+       .slider-button:hover {
+            background-color: #444;
+        }
+        /* Main Body Styles */
+       .product {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 40px 0;
+        }
+       .product-image {
+            width: 30%;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+       .product-description {
+            width: 60%;
+            margin: 20px;
+            font-size: 18px;
+        }
+        /* Footer Styles */
+       .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+       .footer-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+       .footer-link {
+            color: #fff;
+            text-decoration: none;
+        }
+       .footer-link:hover {
+            color: #ccc;
+        }
+       .copyright {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <button class="nav-button">Home</button>
+                <button class="nav-button">Products</button>
+                <button class="nav-button">About</button>
+                <button class="nav-button">Contact</button>
+            </nav>
+            <div class="slider">
+                <img src="image1.jpg" class="slider-image" alt="Product 1">
+                <img src="image2.jpg" class="slider-image" alt="Product 2">
+                <img src="image3.jpg" class="slider-image" alt="Product 3">
+                <button class="slider-button" onclick="prevSlide()">‹</button>
+                <button class="slider-button" onclick="nextSlide()">›</button>
+            </div>
+        </header>
+        <main class="main">
+            <section class="product">
+                <img src="image1.jpg" class="product-image" alt="Product 1">
+                <div class="
